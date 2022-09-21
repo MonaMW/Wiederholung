@@ -10,20 +10,44 @@ namespace Uebung
     {
         static void Main(string[] args)
         {
-            int[] zahleneintraege = new int[] {45, 79, 22, 56, 83};
+            Console.WriteLine("Gebe eine Zahl ein");
+            float zahl1 = Convert.ToInt32(Console.ReadLine());
 
-            Console.WriteLine(Summe(zahleneintraege));
+            Console.WriteLine("Gebe einen Operator ein");
+            string mathOperator = Console.ReadLine();
+
+            Console.WriteLine("Gebe eine weitere Zahl ein");
+            float zahl2 = Convert.ToInt32(Console.ReadLine());
+
+
+            Console.WriteLine($"Das Ergebnis ist: {Calculate(zahl1, zahl2, mathOperator)}");
 
             Console.ReadLine();
         }
 
-        static int Summe(int[] intArray)
+        static float Calculate(float z1, float z2, string op)
         {
-            int summe = 0;
-            foreach(int i in intArray)
+            float summe = 0;
+
+            switch (op)
             {
-                summe += i;
+                case "+":
+                    summe = z1 + z2;
+                    break;
+                case "-":
+                    summe = z1 - z2;
+                    break;
+                case "*":
+                    summe = z1 * z2;
+                    break;
+                case "/":
+                    summe = z1 / z2;
+                    break;
+                case "%":
+                    summe = z1 % z2;
+                    break;
             }
+            
             return summe;
         }
     }
