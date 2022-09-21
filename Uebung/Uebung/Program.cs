@@ -10,21 +10,20 @@ namespace Uebung
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Gebe mir eine Zahl");
-            string zahl1 = Console.ReadLine();
+            int[] zahleneintraege = new int[] {45, 79, 22, 56, 83};
 
-            Console.WriteLine("Gebe mir eine weitere Zahl");
-            string zahl2 = Console.ReadLine();
-
-            //wenn das Ergebnis nochmal gebraucht wird,dann Addition(zahl1, zahl2) in einer Variable speichern
-            Console.WriteLine($"Die Summe von {zahl1} und {zahl2} ist: {Addition(zahl1, zahl2)}");
+            Console.WriteLine(Summe(zahleneintraege));
 
             Console.ReadLine();
         }
-        
-        static int Addition(string z1, string z2)
+
+        static int Summe(int[] intArray)
         {
-            int summe = Convert.ToInt32(z1) + Convert.ToInt32(z2);
+            int summe = 0;
+            foreach(int i in intArray)
+            {
+                summe += i;
+            }
             return summe;
         }
     }
